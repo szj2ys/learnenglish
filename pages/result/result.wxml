@@ -1,0 +1,64 @@
+<view class="page-result">
+  <!-- Ambient Background -->
+  <view class="ambient-bg"></view>
+
+  <!-- Top Bar -->
+  <view class="result-top-bar">
+    <view class="close-btn" bindtap="onClose">
+      <text class="close-icon">✕</text>
+    </view>
+    <view class="xp-badge">
+      <text class="xp-icon">⚡</text>
+      <text class="xp-num">{{totalXP}}</text>
+    </view>
+  </view>
+
+  <!-- Main Content -->
+  <view class="result-main">
+    <!-- Celebration -->
+    <view class="celebration-section">
+      <view class="mascot-wrapper">
+        <view class="mascot-glow"></view>
+        <view class="mascot-circle">
+          <text class="mascot-emoji">🦉</text>
+        </view>
+      </view>
+      <text class="result-title">Well Done!</text>
+      <text class="result-sub">You crushed today's dictation.</text>
+    </view>
+
+    <!-- Stats Grid -->
+    <view class="stats-row">
+      <!-- Accuracy -->
+      <view class="stat-card">
+        <view class="stat-accent accent-secondary"></view>
+        <view class="stat-icon-wrap bg-secondary-fixed">
+          <text class="stat-icon">✓</text>
+        </view>
+        <text class="stat-value">{{accuracy}}%</text>
+        <text class="stat-label">Accuracy</text>
+      </view>
+      <!-- XP -->
+      <view class="stat-card">
+        <view class="stat-accent accent-tertiary"></view>
+        <view class="stat-icon-wrap bg-tertiary-fixed">
+          <text class="stat-icon">★</text>
+        </view>
+        <text class="stat-value text-tertiary">+{{xpEarned}}</text>
+        <text class="stat-label">XP Earned</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Actions -->
+  <view class="result-actions">
+    <view class="btn-3d-primary action-btn" bindtap="onPlayAgain">
+      <text>▶</text>
+      <text>Play Again</text>
+    </view>
+    <view class="btn-3d-secondary review-btn" bindtap="onReviewMistakes">
+      <text>📝</text>
+      <text>Review Mistakes</text>
+    </view>
+  </view>
+</view>
