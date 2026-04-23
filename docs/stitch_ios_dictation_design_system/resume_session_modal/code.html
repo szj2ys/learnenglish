@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Modal - The Kinetic Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#3f4a36",
+                        "on-secondary-container": "#004666",
+                        "surface-tint": "#2b6c00",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary": "#006590",
+                        "on-secondary-fixed": "#001e2e",
+                        "surface-dim": "#dbd9d9",
+                        "tertiary": "#755b00",
+                        "secondary-fixed": "#c8e6ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "primary-fixed": "#87fe45",
+                        "primary": "#2b6c00",
+                        "outline-variant": "#becbb1",
+                        "on-tertiary-container": "#574300",
+                        "primary-container": "#58cc02",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "secondary-fixed-dim": "#88ceff",
+                        "on-primary-fixed-variant": "#1f5100",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-surface": "#303030",
+                        "secondary-container": "#2fb8ff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "on-primary-container": "#1e5000",
+                        "on-background": "#1b1c1c",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#6be026",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-container": "#ddad00",
+                        "on-primary-fixed": "#082100",
+                        "tertiary-fixed-dim": "#f4bf00",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#6be026",
+                        "background": "#fbf9f8",
+                        "surface-container-high": "#eae8e7",
+                        "surface": "#fbf9f8",
+                        "tertiary-fixed": "#ffdf92",
+                        "outline": "#6f7b64"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* 3D Tactile Button Styles */
+        .btn-3d-primary {
+            border-bottom: 4px solid var(--tw-colors-primary);
+            transition: all 0.1s ease;
+        }
+        .btn-3d-primary:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+            margin-bottom: 2px;
+        }
+        
+        .btn-3d-secondary {
+            border-bottom: 4px solid var(--tw-colors-outline-variant);
+            transition: all 0.1s ease;
+        }
+        .btn-3d-secondary:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+            margin-bottom: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Simulated Home Screen Background (Blurred/Darkened) -->
+<div abstract="" and="" background"="" class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&amp;fit=crop&amp;q=80&amp;w=1000')] bg-cover bg-center opacity-20 data-alt=" colorful="" learning="" off-white="" on="" patterns="" shapes="" vibrant=""></div>
+<div class="absolute inset-0 z-0 bg-surface/60 backdrop-blur-sm"></div>
+<!-- Modal Container -->
+<main class="relative z-10 w-full max-w-md px-4 flex flex-col justify-end md:justify-center h-full pb-safe">
+<!-- The Modal Card (Bottom Sheet on Mobile, Centered on Web) -->
+<section class="bg-surface-container-lowest rounded-t-xl md:rounded-xl shadow-[0_32px_64px_rgba(27,28,28,0.15)] flex flex-col gap-6 p-8 w-full transform translate-y-0 relative overflow-hidden">
+<!-- Handle for mobile bottom sheet (decorative on web) -->
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto md:hidden -mt-4 mb-2"></div>
+<!-- Icon / Visual Anchor -->
+<div class="flex justify-center mb-2">
+<div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center relative shadow-[0_8px_32px_rgba(43,108,0,0.1)]">
+<span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">
+                        book
+                    </span>
+<!-- Bookmark Accent -->
+<div class="absolute -right-2 -bottom-2 w-10 h-10 bg-tertiary-container rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-tertiary-container text-xl" style="font-variation-settings: 'FILL' 1;">
+                            bookmark
+                        </span>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<header class="text-center flex flex-col gap-3">
+<h2 class="text-[1.75rem] font-black leading-tight tracking-[-0.02em] text-on-surface">
+                    Pick up where you left off?
+                </h2>
+<p class="text-on-surface-variant text-base leading-relaxed">
+                    You were in the middle of a 50-word session. Continue or start fresh?
+                </p>
+</header>
+<!-- Progress Indication (Optional Enhancement based on context) -->
+<div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden mt-2">
+<div class="bg-gradient-to-r from-primary-container to-primary h-full rounded-full" style="width: 24%;"></div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-3 mt-4">
+<!-- Primary Action -->
+<button class="btn-3d-primary w-full bg-primary-container text-on-primary-container font-bold text-lg py-4 px-6 rounded-DEFAULT flex items-center justify-center gap-2 active:bg-primary active:text-on-primary group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">
+                        play_arrow
+                    </span>
+                    Continue (12/50 words)
+                </button>
+<!-- Secondary Action -->
+<button class="btn-3d-secondary w-full bg-surface-container text-on-surface font-bold text-base py-4 px-6 rounded-DEFAULT flex items-center justify-center gap-2 hover:bg-surface-container-high">
+<span class="material-symbols-outlined">
+                        restart_alt
+                    </span>
+                    Start New Session
+                </button>
+</div>
+</section>
+</main>
+</body></html>

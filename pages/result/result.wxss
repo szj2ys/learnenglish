@@ -98,7 +98,7 @@
 
 .mascot-glow {
   position: absolute;
-  inset: 32rpx;
+  top: 32rpx; right: 32rpx; bottom: 32rpx; left: 32rpx;
   background: var(--primary);
   filter: blur(64rpx);
   opacity: 0.2;

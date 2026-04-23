@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Studio - Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#755b00",
+                        "surface-dim": "#dbd9d9",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary": "#006590",
+                        "on-secondary-fixed": "#001e2e",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#2b6c00",
+                        "on-surface-variant": "#3f4a36",
+                        "on-secondary-container": "#004666",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#88ceff",
+                        "on-primary-fixed-variant": "#1f5100",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "primary": "#2b6c00",
+                        "outline-variant": "#becbb1",
+                        "on-tertiary-container": "#574300",
+                        "primary-container": "#58cc02",
+                        "primary-fixed": "#87fe45",
+                        "secondary-fixed": "#c8e6ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-container": "#ddad00",
+                        "on-primary-fixed": "#082100",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#6be026",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "on-primary-container": "#1e5000",
+                        "on-background": "#1b1c1c",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#2fb8ff",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-surface": "#303030",
+                        "outline": "#6f7b64",
+                        "surface-container-high": "#eae8e7",
+                        "surface": "#fbf9f8",
+                        "tertiary-fixed": "#ffdf92",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#6be026",
+                        "background": "#fbf9f8",
+                        "tertiary-fixed-dim": "#f4bf00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-lg shadow-sm dark:shadow-none flex justify-between items-center w-full px-6 py-4 sticky">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-full overflow-hidden hover:bg-stone-100 dark:hover:bg-stone-800 active:scale-95 transition-transform duration-200">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close up portrait of a young woman with natural makeup looking directly at the camera with a soft expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa5G1JdM1sjd1zjgeeffq-yPe01_1P3llyN1IvLgfexEoAkGk0gfe6mzwnVOugoz-tISFLXuVCviHuILtGXHVcs_q4cI5pPkQQmGnhHFIn3AtX2dV-hBEfkwXp1waOwnQCjICDnpZhikl4YfZWyO71BOTIst4hJeozFVxIEY44NuXmODJHb7Gyi__Xx2K_loenJae05sUUedYqL7i_N_nGxAd03Gs-6lVH6eLDWSdOpTxVPHVAWRUgtKKhT0lWlfRUiKbuGV3DqGec"/>
+</button>
+<h1 class="text-xl font-black text-lime-600 dark:text-lime-400 tracking-tighter">Kinetic Studio</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-lime-600 dark:text-lime-400 hover:bg-stone-100 dark:hover:bg-stone-800 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-4 pt-8">
+<!-- Header -->
+<div class="mb-10 text-center">
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Global Ranks</h2>
+<p class="text-on-surface-variant font-medium">Week of October 24th</p>
+</div>
+<!-- Podium -->
+<div class="flex items-end justify-center gap-4 mb-12 h-64">
+<!-- 2nd Place -->
+<div class="flex flex-col items-center w-24">
+<div class="relative mb-4">
+<img alt="2nd Place" class="w-16 h-16 rounded-full object-cover border-4 border-surface ring-2 ring-secondary-container z-10 relative" data-alt="portrait of a young man with a short beard and serious expression looking off camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnb1Ze_CZng0n8HqYSppjB2ZJvRvWmGTl3LYBaVw2s3-bYRhyWZpM6rKZBY5AmFD4OqmZ5jwZr6LxTywQ940fKgUldZ3l9JTZYeLvRogakofzMo94Ec0-R6Q-ckVWCbSYVfECmGnqAML6XqgV9gDHknbhVSdo4g3s752pZq03-2rcwXn8ivD8v5MfO4CLnsAcUzw30BEPga4H9PQJKxrF0DmvmseMMBQOUZ1j8bYVZYKKVnYGF5WlZstrUay9Cj6MApn83ZJQwav42"/>
+<div class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary-container w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shadow-md z-20">2</div>
+</div>
+<div class="bg-surface-container-high rounded-t-xl w-full h-24 flex flex-col items-center justify-start pt-4 border-b-4 border-surface-container-highest">
+<span class="font-bold text-on-surface">Alex</span>
+<span class="text-secondary font-extrabold text-sm">4.2k XP</span>
+</div>
+</div>
+<!-- 1st Place -->
+<div class="flex flex-col items-center w-28 -translate-y-4">
+<div class="relative mb-4">
+<img alt="1st Place" class="w-20 h-20 rounded-full object-cover border-4 border-surface ring-4 ring-tertiary-container z-10 relative shadow-lg" data-alt="portrait of a smiling young woman with dark hair and bright eyes looking at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN9RwthyEW8NCwA7FeC8UmFVAjjHgfYXOQGBWZXyIUJQTCIUBx2M7M10nDYLSX9JLg8ysXDspptfbTg2V49OsZZ_xkzRjomEbmEy1fnXpNOkcS_TVxGZhKGoNRUgTjDWPdcW2RKNAfF5tfKFz4VxTHfETQB32pDIElboQ5HXXadU4QeHxn0dIE7L_SxRkx1d82r4wu09XK2Phkyziv11MFiBFH4hz2TchwOaP16akGgTaNu2XtetynBeo7aMESk_Dr50FACMUwD0H8"/>
+<div class="absolute -bottom-3 -right-2 bg-tertiary-container text-on-tertiary-container w-8 h-8 rounded-full flex items-center justify-center font-black text-sm shadow-md z-20">1</div>
+</div>
+<div class="bg-gradient-to-t from-tertiary-container to-tertiary-fixed-dim rounded-t-xl w-full h-32 flex flex-col items-center justify-start pt-4 border-b-4 border-tertiary shadow-lg">
+<span class="font-black text-on-tertiary-container text-lg">Sarah</span>
+<span class="text-on-tertiary-container font-extrabold text-sm opacity-90">5.8k XP</span>
+</div>
+</div>
+<!-- 3rd Place -->
+<div class="flex flex-col items-center w-24">
+<div class="relative mb-4">
+<img alt="3rd Place" class="w-16 h-16 rounded-full object-cover border-4 border-surface ring-2 ring-primary-container z-10 relative" data-alt="portrait of a young man with a slight smile and casual attire looking relaxed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBPvsl8UhKvkQkW8pWy-stza6AYnwunIn45QpFa8KeqvJmnyA056D_GqMWwA7xox_MQjbUWpw6JgmJQl3aTUhbKQRkuY2qks5K69iXZfKQ76i_ehZAh75uqgjnBWaUHzRHWosNQ72kmaaM4U9GxYBqfWQzu-uV2h3EWGOOTw90nsAeJACBQg9_XZfeYYZZGRrvDYueoYbbs7o6a0kZu5JfiU1HrSttipNSmF1ErF4SnGDShB26K1qVwzz19bZMSza_jEuseOnvZ0a8"/>
+<div class="absolute -bottom-2 -right-2 bg-primary-container text-on-primary-container w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shadow-md z-20">3</div>
+</div>
+<div class="bg-surface-container-low rounded-t-xl w-full h-20 flex flex-col items-center justify-start pt-4 border-b-4 border-surface-container-highest">
+<span class="font-bold text-on-surface">Mike</span>
+<span class="text-primary font-extrabold text-sm">3.9k XP</span>
+</div>
+</div>
+</div>
+<!-- Leaderboard List -->
+<div class="space-y-4">
+<!-- Current User Rank (Sticky effect conceptually) -->
+<div class="bg-surface-container-lowest p-4 rounded-[1rem] flex items-center justify-between border-2 border-outline-variant/30 shadow-[0_8px_32px_rgba(0,0,0,0.06)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-center gap-4">
+<span class="font-extrabold text-on-surface-variant w-6 text-center">12</span>
+<img alt="Current User" class="w-12 h-12 rounded-full object-cover" data-alt="close up portrait of a young woman with natural makeup looking directly at the camera with a soft expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFV0guUYj19WSCG66sS69Uq_oB5d8AOd2qfbjvMMmE3W_JniXjVPTdyIKWrOMVjc6ENjk-2DiHnaJLy93YkjcvKfWGeplFE9Kg_rzWwclzKsi1aGMk7le189C5v-8TU1t8Yfwl6ADj7MyfU_NiNLxVDiuNQHhFdfIM-99v6Hb6Y_zGnrSPZgumT53j0lxswAZnl_Yxft5g_VBYKljZs7CRKcfd6mhqyaRgY7LMsWE0jxMKSUI0ugZYXWO-FdwSNthyEYo-MeIGtxQJ"/>
+<div>
+<p class="font-bold text-on-surface text-lg">You</p>
+<p class="text-sm text-on-surface-variant">Rising fast!</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-black text-primary-container text-lg">2.4k</p>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wide">XP</p>
+</div>
+</div>
+<!-- Other Ranks -->
+<div class="bg-surface-container-low p-4 rounded-[1rem] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="font-bold text-on-surface-variant w-6 text-center">4</span>
+<img alt="Rank 4" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a young woman with curly hair looking thoughtfully to the side" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm7ZmuGLNnme2XAQwDEMwbKfZFGJuvV-YqPZPOkM6zynb13rmUofTaK0azRqIRjptaK_RW7WmBTWsjcOe8cMBlzz_yR5qu9CjYIpSbgmhUAXH_3S9TYIfU_ndntlgyyx-J3wrdI9v0MFtGZdnI3j3x5XirYoXqzS7WdwH4YD8F7bqL6fI3DXhfXtMfD3Qyv1zauo_v8nscR45GJhge3aHZTXa5HxGnn__nqF2m4pcgQvETlDUmbKdavjvEy3EkMuexX5OshDHOGXOm"/>
+<p class="font-semibold text-on-surface">Emma</p>
+</div>
+<span class="font-bold text-on-surface-variant">3.8k XP</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-[1rem] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="font-bold text-on-surface-variant w-6 text-center">5</span>
+<img alt="Rank 5" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a young man with messy hair looking straight ahead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen-nWAJperPVsf4AEENogQOeZhgPZrIWw-AJ9qWEpiwPyOXHATcpqsVDBFsFOULjTa0bIP8FMnM7QdLAPj_QxWUUv2xVxgYmqMFcAyQ4Ux4nb72BQ7XCxpo8pQuArdzem_bCqytOWC0HFRKre4ChMvUKzCJ-BQXbN5ZS2YPBQEAcloXrgCQ60DZPihGvdyhJLDdKJbPlEZs6EQw5fvCncj711EkeSS7_c5_sT0EGmqXrs2UCg1gTmCLfA0FjE18F5Y7xbet74-yZc"/>
+<p class="font-semibold text-on-surface">David</p>
+</div>
+<span class="font-bold text-on-surface-variant">3.5k XP</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-[1rem] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="font-bold text-on-surface-variant w-6 text-center">6</span>
+<img alt="Rank 6" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a woman with bright pink hair smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8w0GXnL7SGL3AlhxjF6da7Tn0AC7RvQv1ws90ZZiqokM3p7qYx3vS7sKgBg3zY0mmwEfqGrDJFNlKo6qrmzr1ZpPgn0YHZ2Pi9XHMloxWefLORC7eZX5OsCK4msqV5eyXkAgAFkyBlvhyITZ0XQ654JWXPCPk0BfDXI1XM3uHENjNFCc7pz7AYHvIeCbeBsMguSCYNdhDQoZspkVbAVTtMHcKNDYH6AObPcoetFx1QcnqE8DKVZ67IYvyA4aUCFElYmXpqvB5JWQx"/>
+<p class="font-semibold text-on-surface">Chloe</p>
+</div>
+<span class="font-bold text-on-surface-variant">3.1k XP</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-8 pt-4 bg-white/90 dark:bg-stone-900/90 backdrop-blur-2xl rounded-t-[32px] shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-5 py-2.5 hover:text-stone-700 dark:hover:text-stone-200 active:translate-y-0 active:border-b-0 transition-all duration-100" href="#">
+<span class="material-symbols-outlined mb-1">school</span>
+<span class="font-plus-jakarta-sans text-[10px] font-extrabold uppercase tracking-widest text-lime-600 dark:text-lime-400">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-lime-500 dark:bg-lime-600 text-white rounded-2xl px-5 py-2.5 border-b-[4px] border-lime-700 dark:border-lime-800 -translate-y-2 transition-all duration-200 active:translate-y-0 active:border-b-0" href="#">
+<span class="material-symbols-outlined mb-1">leaderboard</span>
+<span class="font-plus-jakarta-sans text-[10px] font-extrabold uppercase tracking-widest text-lime-600 dark:text-lime-400">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-5 py-2.5 hover:text-stone-700 dark:hover:text-stone-200 active:translate-y-0 active:border-b-0 transition-all duration-100" href="#">
+<span class="material-symbols-outlined mb-1">equalizer</span>
+<span class="font-plus-jakarta-sans text-[10px] font-extrabold uppercase tracking-widest text-lime-600 dark:text-lime-400">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-5 py-2.5 hover:text-stone-700 dark:hover:text-stone-200 active:translate-y-0 active:border-b-0 transition-all duration-100" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-plus-jakarta-sans text-[10px] font-extrabold uppercase tracking-widest text-lime-600 dark:text-lime-400">Profile</span>
+</a>
+</nav>
+</body></html>

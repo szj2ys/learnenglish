@@ -123,7 +123,7 @@
 
 .ambient-glow {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   background: var(--secondary);
   filter: blur(64rpx);
   opacity: 0.2;
@@ -151,7 +151,7 @@
 
 .speaker-inner {
   position: absolute;
-  inset: 16rpx;
+  top: 16rpx; right: 16rpx; bottom: 16rpx; left: 16rpx;
   border-radius: 50%;
   border: 2rpx solid rgba(255, 255, 255, 0.2);
 }
@@ -200,7 +200,7 @@
 
 .input-gradient {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   background: linear-gradient(to bottom, transparent, var(--surface-container-low) 30%);
   pointer-events: none;
 }

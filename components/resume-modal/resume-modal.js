@@ -14,6 +14,12 @@ Component({
     }
   },
   methods: {
+    onOverlayTap() {
+      this.triggerEvent('close')
+    },
+    preventBubble() {
+      // Stop tap from bubbling to overlay
+    },
     onContinue() {
       this.triggerEvent('continue')
     },

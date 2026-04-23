@@ -5,10 +5,10 @@ Page({
     progressPercent: 24,
     xp: 523,
     wordXP: 10,
-    inputValue: 'ap',
-    remainingHint: 'ple',
+    inputValue: '',
+    remainingHint: '',
     isPlaying: false,
-    word: 'apple'
+    word: ''
   },
   onLoad(options) {
     const count = options.count || 50

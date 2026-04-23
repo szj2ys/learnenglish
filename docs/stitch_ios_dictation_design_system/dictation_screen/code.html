@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dictation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#becbb1",
+                    "inverse-surface": "#303030",
+                    "on-surface": "#1b1c1c",
+                    "on-surface-variant": "#3f4a36",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-fixed-variant": "#1f5100",
+                    "surface-variant": "#e4e2e2",
+                    "secondary": "#006590",
+                    "tertiary-fixed-dim": "#f4bf00",
+                    "background": "#fbf9f8",
+                    "surface-container-low": "#f5f3f3",
+                    "tertiary-fixed": "#ffdf92",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004c6e",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#082100",
+                    "on-secondary-fixed": "#001e2e",
+                    "on-background": "#1b1c1c",
+                    "primary-fixed": "#87fe45",
+                    "inverse-primary": "#6be026",
+                    "tertiary-container": "#ddad00",
+                    "surface-bright": "#fbf9f8",
+                    "primary-fixed-dim": "#6be026",
+                    "tertiary": "#755b00",
+                    "on-tertiary-container": "#574300",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#2b6c00",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#efeded",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "secondary-container": "#2fb8ff",
+                    "primary": "#2b6c00",
+                    "surface-dim": "#dbd9d9",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#58cc02",
+                    "on-primary-container": "#1e5000",
+                    "on-secondary-container": "#004666",
+                    "outline": "#6f7b64",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#c8e6ff",
+                    "surface": "#fbf9f8",
+                    "secondary-fixed-dim": "#88ceff",
+                    "surface-container-high": "#eae8e7",
+                    "surface-container-highest": "#e4e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "label": [
+                            "Plus Jakarta Sans"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .ghost-border {
+            border: 2px solid rgba(190, 203, 177, 0.3); /* outline-variant at ~30% */
+        }
+        .text-3d-shadow {
+            text-shadow: 0px 4px 12px rgba(43, 108, 0, 0.15); /* primary color shadow */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col relative overflow-hidden">
+<!-- Floating Feedback -->
+<div class="absolute top-24 right-8 z-50 transform rotate-[-5deg]">
+<span class="font-headline font-black text-primary-fixed-dim text-3xl tracking-tighter drop-shadow-[0_4px_8px_rgba(107,224,38,0.4)]">
+            +10 XP
+        </span>
+</div>
+<!-- TopAppBar (ProgressHeader) -->
+<header class="flex justify-between items-center px-6 py-4 w-full max-w-full bg-surface">
+<button class="text-on-surface-variant hover:opacity-80 active:translate-y-0.5 transition-all w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<!-- Chunky Progress Bar -->
+<div class="flex-grow mx-6 max-w-[200px] h-4 bg-surface-container-highest rounded-full overflow-hidden relative shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)]">
+<div class="absolute top-0 left-0 h-full w-[24%] bg-gradient-to-r from-primary-container to-primary rounded-full shadow-[inset_0_2px_0_rgba(255,255,255,0.3)]"></div>
+</div>
+<div class="flex items-center gap-1 text-tertiary-container font-headline font-extrabold tracking-tight bg-surface-container-low px-3 py-1.5 rounded-full border-b-2 border-surface-container-highest">
+<span class="material-symbols-outlined text-xl" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-lg">523</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col justify-around px-6 pb-12 pt-8 z-10">
+<!-- MainVisual (AudioPlaybackView) -->
+<section class="flex flex-col items-center justify-center gap-8">
+<div class="relative">
+<!-- Ambient Shadow -->
+<div class="absolute inset-0 bg-secondary blur-2xl opacity-20 rounded-full transform scale-110 translate-y-4"></div>
+<!-- 3D Tactile Speaker Button -->
+<button class="relative w-40 h-40 rounded-full bg-secondary-container flex items-center justify-center border-b-[8px] border-secondary active:border-b-0 active:translate-y-[8px] transition-all duration-75 group">
+<!-- Inner highlight for glass effect -->
+<div class="absolute inset-2 rounded-full border border-white/20"></div>
+<span class="material-symbols-outlined text-7xl text-on-secondary-container group-active:scale-95 transition-transform" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+<h2 class="font-headline font-bold text-on-surface-variant text-xl tracking-tight uppercase">Tap to Replay</h2>
+</section>
+<!-- InteractionZone (Lower Half) -->
+<section class="flex flex-col items-center gap-10 w-full max-w-md mx-auto">
+<!-- DictationInputField -->
+<div class="w-full bg-surface-container-lowest rounded-[2rem] p-8 ghost-border shadow-[0_16px_40px_rgba(0,0,0,0.03)] flex justify-center items-center relative overflow-hidden">
+<!-- Subtle background gradient hint -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-low/30 pointer-events-none"></div>
+<div class="font-headline text-[3.5rem] leading-none font-black tracking-tight flex items-center justify-center">
+<span class="text-on-surface text-3d-shadow">ap</span>
+<span class="w-1.5 h-14 bg-secondary mx-1 rounded-full shadow-[0_0_8px_rgba(0,101,144,0.5)]"></span>
+<span class="text-outline-variant">ple</span>
+</div>
+</div>
+<!-- UIStackView: Controls -->
+<div class="flex gap-6 justify-center w-full">
+<!-- Secondary Action: Replay -->
+<button class="w-16 h-16 rounded-2xl bg-surface-container-high border-b-4 border-surface-variant flex items-center justify-center active:border-b-0 active:translate-y-1 transition-all duration-75 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="replay">replay</span>
+</button>
+<!-- Secondary Action: Delete -->
+<button class="w-16 h-16 rounded-2xl bg-surface-container-low border-b-4 border-surface-variant flex items-center justify-center active:border-b-0 active:translate-y-1 transition-all duration-75 hover:bg-surface-container">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="backspace">backspace</span>
+</button>
+</div>
+</section>
+</main>
+</body></html>

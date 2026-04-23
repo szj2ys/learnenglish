@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Rankings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#001e2e",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#004666",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#574300",
+                        "on-primary-fixed-variant": "#1f5100",
+                        "on-surface": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "secondary-fixed": "#c8e6ff",
+                        "surface-variant": "#e4e2e2",
+                        "secondary": "#006590",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed": "#082100",
+                        "tertiary-container": "#ddad00",
+                        "inverse-primary": "#6be026",
+                        "surface-tint": "#2b6c00",
+                        "surface-container": "#efeded",
+                        "on-surface-variant": "#3f4a36",
+                        "background": "#fbf9f8",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#755b00",
+                        "primary-container": "#58cc02",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "secondary-fixed-dim": "#88ceff",
+                        "tertiary-fixed-dim": "#f4bf00",
+                        "surface-bright": "#fbf9f8",
+                        "on-primary-container": "#1e5000",
+                        "surface-dim": "#dbd9d9",
+                        "primary-fixed": "#87fe45",
+                        "secondary-container": "#2fb8ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "tertiary-fixed": "#ffdf92",
+                        "surface-container-low": "#f5f3f3",
+                        "outline-variant": "#becbb1",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "outline": "#6f7b64",
+                        "primary-fixed-dim": "#6be026",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "inverse-surface": "#303030",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-high": "#eae8e7",
+                        "primary": "#2b6c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fbf9f8]/90 dark:bg-stone-950/90 backdrop-blur-xl border-b-0 shadow-sm">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline font-extrabold tracking-tight text-lg text-[#58cc02]">Kinetic Dictate</h1>
+</div>
+<div class="flex items-center">
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-tertiary-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined fill">local_fire_department</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-4 md:px-8 max-w-4xl mx-auto space-y-8">
+<!-- Hero Section / Context -->
+<section class="flex flex-col md:flex-row gap-6 items-center bg-surface-container-low rounded-xl p-8 relative overflow-hidden">
+<!-- Decorative Gradient Background -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-secondary-container/20 opacity-50 pointer-events-none"></div>
+<div class="flex-1 space-y-4 z-10 relative">
+<h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter text-on-surface leading-tight">
+                    Global <br/> Leaderboard
+                </h2>
+<p class="text-on-surface-variant text-lg">
+                    See where you stand among the top players worldwide.
+                </p>
+</div>
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-surface-container-lowest shadow-[0_8px_32px_rgba(27,28,28,0.06)] flex items-center justify-center z-10 relative">
+<span class="material-symbols-outlined text-6xl md:text-8xl text-tertiary-container">trophy</span>
+</div>
+</section>
+<!-- Current User Rank Highlights -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_8px_32px_rgba(27,28,28,0.06)] flex items-center justify-between border border-outline-variant/15">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-surface-container overflow-hidden relative">
+<img alt="Current User" class="w-full h-full object-cover" data-alt="close up portrait of a young woman with natural makeup looking directly at camera with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPJYSTAxbWAcqODCobqp307RnYISxJRnfhdWTGfFA0r1Y0UvIfHoXYALfZuu_1b5Cp1PRPGJb8Ts0l2SJtz79qNkq9Wq7UYwYIPAfMgRURbv2kLHx3lj4YkkFdCmoJQ6-xlFF0-uVGXECS_J8IgIjMd4DSqnUW1joJHXwAb4XgfC45mhC0sCmUHZcgv5zYdrENTjVvpZOokOn3vpHmq2lplfZZDIz7VQSBldg-fJcV_glO0IPWRbZjJPEdOixD5lGR2R2FEn58mdn6"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-wider">Your Rank</p>
+<p class="font-headline text-2xl font-extrabold text-on-surface">#42</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-wider">Score</p>
+<p class="font-headline text-2xl font-extrabold text-primary-container">12,450</p>
+</div>
+</section>
+<!-- Leaderboard List -->
+<section class="space-y-4">
+<!-- Rank 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-center gap-4 shadow-[0_4px_16px_rgba(27,28,28,0.04)] border border-tertiary-container/30 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-tertiary-container"></div>
+<div class="w-10 font-headline text-2xl font-black text-tertiary-container text-center pl-2">1</div>
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Player 1" class="w-full h-full object-cover" data-alt="portrait of a young man with short dark hair looking confident against a plain background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz64jZSo8SVyAevfkoI8qOAzXITiUje2pP7DUM-ps-s32xR61SsZzqOHQrRhzzyu5EIeu7QgBTbogflmppQvmFFHdNV0eWG64wNvcUps3QzAZYnUvwW0JmQAmmDP3NWmKoSTv68K9PxP-yzNHp4uf-86Uf8RGY8UWle05z6F-bclGbZfk_2lYxalNFAkZdztcZ-YxaUzhjzVyxg26UNnezwvFUL0dccPfZiEwQ2G1ED3u3JOuEza0C4zrElDU51i2XPQdC7qZFfR7S"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Alex Mercer</h3>
+<p class="text-sm text-on-surface-variant">Level 50 Titan</p>
+</div>
+<div class="text-right pr-4">
+<p class="font-headline font-extrabold text-xl text-on-surface">24,800</p>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-center gap-4 shadow-[0_4px_16px_rgba(27,28,28,0.04)] border border-outline-variant/15">
+<div class="w-10 font-headline text-2xl font-black text-on-surface-variant text-center">2</div>
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Player 2" class="w-full h-full object-cover" data-alt="portrait of a smiling woman with long brown hair against a light grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt2KW53V9cZdLlv_LYcdrBRsH7Q1T7atKr9lLgaGy8SuUTj50zVIvkMLeH6z8-S4mJKQdEYrpFYx9J6zuVZqPfIk1iJHauSPIoIa-inB2F4Jl0rpkohWbcQ83amuYOtF8mqZsxurtKOmElXVlED0LCXS4TvTE9jwaJFU0peCuS-0CPX3xzVAS5yERaXeuszX3wl_UfvjJUbi6n5cuC04TvtIKCYySUU9bD9QA9uKF1Mt_GGXk1tzzoqEHR28hV6QZS2CWGquJC2xZw"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Samara Joy</h3>
+<p class="text-sm text-on-surface-variant">Level 48 Master</p>
+</div>
+<div class="text-right pr-4">
+<p class="font-headline font-extrabold text-xl text-on-surface">23,150</p>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-center gap-4 shadow-[0_4px_16px_rgba(27,28,28,0.04)] border border-outline-variant/15">
+<div class="w-10 font-headline text-2xl font-black text-secondary text-center">3</div>
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">J. Doe</h3>
+<p class="text-sm text-on-surface-variant">Level 45 Expert</p>
+</div>
+<div class="text-right pr-4">
+<p class="font-headline font-extrabold text-xl text-on-surface">21,900</p>
+</div>
+</div>
+<!-- Rank 4 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 border border-transparent">
+<div class="w-10 font-headline text-xl font-bold text-on-surface-variant text-center">4</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img alt="Player 4" class="w-full h-full object-cover" data-alt="headshot of a man with glasses and short hair looking serious" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVxqG_joqQykQfjGzfigrwZF0VCWi00FJ9vC-SFH1uUcKHxXyewVN1Ccr6kyqBBH4ZkKp3nLDgDO4CboyBUUkN4CET-_IfcOQv7rMBzftolHC6y3gT920WrUy-fLqCNWTmPQOf9gLdb7fRCdlkSikR9X9nhNQIOp7QBT7j5MInFmp8Cx5lg8mwl9Mr_qOiJsIrrCZvJbTTGeThh9IDdfmMKd9NlmAnZyV0Dy5HJeMTYLqYEquEDcndzF8m2YiRCJ9uzmeBCofYWeeC"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-base text-on-surface">Chris Lee</h3>
+</div>
+<div class="text-right pr-4">
+<p class="font-headline font-bold text-lg text-on-surface-variant">19,500</p>
+</div>
+</div>
+<!-- Rank 5 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 border border-transparent">
+<div class="w-10 font-headline text-xl font-bold text-on-surface-variant text-center">5</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img alt="Player 5" class="w-full h-full object-cover" data-alt="headshot of a woman smiling slightly looking at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBncEasbpziB_X8Yl7NUKGh6u8dzQeJqv9d-5DQKxenjQ06BbihyHF2AgxQ2wuaPLW3dQdNytDOqRoUeNkZG3MGQAQ4cryIy-gTUDLf_8flmr4Zti99wtodif1Nx7xq0XtiQFE2B8vA-GL8qSnqdb8y93JVmFDZ7pzYQFywSRvxKyVYmMvUzIc2wNBkd9EuMmi6KIzi5yqD_WU8MRfTpKUF9vAJo0rd8ohN25Jisluhxq0_Yzr7duujjtQd9q4H332H_LafJJmZ5N0q"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-base text-on-surface">Taylor V.</h3>
+</div>
+<div class="text-right pr-4">
+<p class="font-headline font-bold text-lg text-on-surface-variant">18,200</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-white/80 dark:bg-stone-900/80 backdrop-blur-lg rounded-t-[32px] shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t-0 md:hidden">
+<!-- Learn (Inactive) -->
+<a class="flex flex-col items-center justify-center text-stone-400 px-5 py-2 hover:text-stone-600 dark:hover:text-stone-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Learn</span>
+</a>
+<!-- Ranks (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#58cc02] text-white rounded-2xl px-5 py-2 shadow-[0_4px_0_0_#2b6c00] -translate-y-1 active:translate-y-0 active:shadow-none transition-all duration-150" href="#">
+<span class="material-symbols-outlined fill text-2xl mb-1">leaderboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Ranks</span>
+</a>
+<!-- Quests (Inactive) -->
+<a class="flex flex-col items-center justify-center text-stone-400 px-5 py-2 hover:text-stone-600 dark:hover:text-stone-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">assignment</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Quests</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-stone-400 px-5 py-2 hover:text-stone-600 dark:hover:text-stone-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+<!-- Web Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed top-0 right-0 h-full w-24 bg-surface-container flex-col items-center py-8 gap-8 border-l border-outline-variant/15 z-40">
+<div class="mt-16 w-full flex flex-col gap-6 items-center">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors w-16 h-16 rounded-xl hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined text-3xl">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-container bg-surface-container-lowest w-16 h-16 rounded-xl shadow-[0_4px_12px_rgba(27,28,28,0.08)] border-b-4 border-primary" href="#">
+<span class="material-symbols-outlined fill text-3xl">leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors w-16 h-16 rounded-xl hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined text-3xl">assignment</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors w-16 h-16 rounded-xl hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined text-3xl">person</span>
+</a>
+</div>
+</nav>
+</body></html>
