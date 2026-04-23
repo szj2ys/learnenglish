@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/dictation/dictation",
+    "pages/result/result",
+    "pages/leaderboard/leaderboard",
+    "pages/profile/profile",
+    "pages/edit-profile/edit-profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "custom",
+    "backgroundColor": "#fbf9f8"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      { "pagePath": "pages/home/home", "text": "Learn" },
+      { "pagePath": "pages/leaderboard/leaderboard", "text": "Ranks" },
+      { "pagePath": "pages/profile/profile", "text": "Profile" }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
