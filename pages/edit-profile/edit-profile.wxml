@@ -1,0 +1,77 @@
+<view class="page-edit-profile">
+  <!-- Top Bar -->
+  <view class="edit-top-bar">
+    <view class="edit-back-btn" bindtap="onBackTap">
+      <text class="edit-back-icon">←</text>
+    </view>
+    <text class="edit-title">Edit Profile</text>
+    <view class="edit-save-btn" bindtap="onSaveTap">
+      <text class="edit-save-icon">✓</text>
+    </view>
+  </view>
+
+  <view class="edit-content">
+    <!-- Avatar Section -->
+    <view class="edit-avatar-section">
+      <view class="edit-avatar-wrap">
+        <view class="edit-avatar">
+          <text class="edit-avatar-text">{{name[0]}}</text>
+        </view>
+        <view class="edit-avatar-edit" bindtap="onAvatarTap">
+          <text class="edit-avatar-icon">✏️</text>
+        </view>
+      </view>
+      <text class="edit-avatar-label">Change Avatar</text>
+    </view>
+
+    <!-- Form Fields -->
+    <view class="edit-form">
+      <view class="edit-field">
+        <text class="edit-label">Name</text>
+        <input class="edit-input" type="text" value="{{name}}" data-field="name" bindinput="onInputChange" />
+      </view>
+      <view class="edit-field">
+        <text class="edit-label">Username</text>
+        <input class="edit-input" type="text" value="{{username}}" data-field="username" bindinput="onInputChange" />
+      </view>
+    </view>
+
+    <!-- Account Security -->
+    <view class="edit-security">
+      <text class="edit-section-label">Account Security</text>
+      <view class="security-card">
+        <view class="security-item" bindtap="onEmailTap">
+          <view class="security-left">
+            <view class="security-icon-wrap bg-secondary-fixed">
+              <text class="security-icon">✉️</text>
+            </view>
+            <view class="security-info">
+              <text class="security-name">Email Address</text>
+              <text class="security-value">{{email}}</text>
+            </view>
+          </view>
+          <text class="security-arrow">›</text>
+        </view>
+        <view class="security-item" bindtap="onPasswordTap">
+          <view class="security-left">
+            <view class="security-icon-wrap bg-tertiary-fixed">
+              <text class="security-icon">🔒</text>
+            </view>
+            <view class="security-info">
+              <text class="security-name">Password</text>
+              <text class="security-value">{{password}}</text>
+            </view>
+          </view>
+          <text class="security-arrow">›</text>
+        </view>
+      </view>
+    </view>
+</view>
+
+  <!-- Floating Save Button -->
+  <view class="edit-floating-save">
+    <view class="btn-3d-primary save-btn" bindtap="onSaveTap">
+      <text>Save Changes</text>
+    </view>
+  </view>
+</view>

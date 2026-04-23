@@ -1,0 +1,96 @@
+<view class="page-leaderboard">
+  <!-- Top Bar -->
+  <view class="lb-top-bar">
+    <view class="lb-top-left">
+      <view class="menu-btn">
+        <text class="menu-icon">☰</text>
+      </view>
+      <text class="lb-title">Leaderboards</text>
+    </view>
+    <view class="lb-top-right">
+      <view class="streak-badge">
+        <text class="streak-icon">🔥</text>
+        <text class="streak-num">{{streak}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="lb-content">
+    <!-- Header -->
+    <view class="lb-header">
+      <text class="lb-header-title">Global Ranks</text>
+      <text class="lb-header-sub">Week of April 23rd</text>
+    </view>
+
+    <!-- Podium -->
+    <view class="podium-section">
+      <view class="podium-row">
+        <view wx:for="{{podium}}" wx:key="rank" class="podium-item {{item.color}}">
+          <view class="podium-avatar-wrap">
+            <view class="podium-avatar {{item.isFirst ? 'gold-avatar' : ''}}">
+              <text class="podium-initial">{{item.name[0]}}</text>
+            </view>
+            <view class="podium-badge {{item.isFirst ? 'gold-badge' : ''}}">{{item.rank}}</view>
+            <view wx:if="{{item.isFirst}}" class="crown">🏆</view>
+          </view>
+          <text class="podium-name {{item.isFirst ? 'gold-name' : ''}}">{{item.name}}</text>
+          <text class="podium-score {{item.isFirst ? 'gold-score' : ''}}">{{item.score}} XP</text>
+          <view class="podium-bar {{item.color}}-bar">
+            <text class="podium-bar-num">{{item.rank}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Promotion Zone Label -->
+    <view class="zone-label">
+      <text class="zone-line"></text>
+      <view class="zone-badge">
+        <text class="zone-icon">↑</text>
+        <text class="zone-text">Top 10 Advance</text>
+      </view>
+      <text class="zone-line"></text>
+    </view>
+
+    <!-- Rank List -->
+    <view class="rank-list">
+      <view wx:for="{{list}}" wx:key="rank" class="rank-item {{item.warning ? 'warning' : ''}}">
+        <view wx:if="{{item.warning}}" class="warning-stripe"></view>
+        <text class="rank-num">{{item.rank}}</text>
+        <view class="rank-avatar">
+          <text wx:if="{{item.initial}}" class="rank-initial">{{item.initial}}</text>
+          <text wx:else class="rank-emoji">👤</text>
+        </view>
+        <view class="rank-info">
+          <text class="rank-name">{{item.name}}</text>
+          <text wx:if="{{item.warning}}" class="warning-icon">⚠️</text>
+        </view>
+        <text class="rank-score {{item.warning ? 'text-error' : ''}}">{{item.score}} XP</text>
+      </view>
+    </view>
+
+    <!-- Demotion Zone -->
+    <view class="zone-label demotion">
+      <text class="zone-line"></text>
+      <text class="zone-text-plain">Demotion Zone</text>
+      <text class="zone-line"></text>
+    </view>
+
+    <!-- Bottom Spacer -->
+</view>
+
+  <!-- Floating My Rank Card -->
+  <view class="my-rank-float">
+    <view class="my-rank-card">
+      <text class="my-rank-num">{{myRank}}</text>
+      <view class="my-rank-avatar">
+        <text class="my-rank-emoji">👤</text>
+      </view>
+      <view class="my-rank-info">
+        <text class="my-rank-name">{{myName}}</text>
+        <text class="my-rank-promo">{{promotionDiff}} XP to promotion</text>
+      </view>
+      <text class="my-rank-score">{{myScore}} XP</text>
+    </view>
+  </view>
+</view>

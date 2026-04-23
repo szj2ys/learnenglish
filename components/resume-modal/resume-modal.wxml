@@ -1,0 +1,39 @@
+<view wx:if="{{show}}" class="resume-overlay" bindtap="onOverlayTap">
+  <view class="resume-modal" catchtap="preventBubble">
+    <!-- Handle -->
+    <view class="resume-handle"></view>
+
+    <!-- Icon -->
+    <view class="resume-icon-wrap">
+      <view class="resume-icon-main">
+        <text class="resume-icon-text">📖</text>
+      </view>
+      <view class="resume-icon-accent">
+        <text class="resume-accent-text">🔖</text>
+      </view>
+    </view>
+
+    <!-- Content -->
+    <view class="resume-content">
+      <text class="resume-title">Pick up where you left off?</text>
+      <text class="resume-sub">You were in the middle of a {{total}}-word session. Continue or start fresh?</text>
+    </view>
+
+    <!-- Progress -->
+    <view class="resume-progress-track">
+      <view class="resume-progress-fill" style="width: {{current / total * 100}}%"></view>
+    </view>
+
+    <!-- Actions -->
+    <view class="resume-actions">
+      <view class="btn-3d-primary resume-btn-primary" bindtap="onContinue">
+        <text>▶</text>
+        <text>Continue ({{current}}/{{total}} words)</text>
+      </view>
+      <view class="btn-3d-secondary resume-btn-secondary" bindtap="onRestart">
+        <text>↻</text>
+        <text>Start New Session</text>
+      </view>
+    </view>
+  </view>
+</view>

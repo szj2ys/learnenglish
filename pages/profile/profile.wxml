@@ -1,0 +1,103 @@
+<view class="page-profile">
+  <!-- Top Bar -->
+  <view class="profile-top-bar">
+    <view class="menu-btn">
+      <text class="menu-icon">☰</text>
+    </view>
+    <text class="profile-brand">Kinetic Dictate</text>
+    <view class="streak-btn">
+      <text class="streak-icon">🔥</text>
+    </view>
+  </view>
+
+  <view class="profile-content">
+    <!-- Hero Profile -->
+    <view class="profile-hero" bindtap="onEditProfile">
+      <view class="hero-card">
+        <view class="hero-info">
+          <text class="hero-name">{{name}}\n{{surname}}</text>
+          <text class="hero-title">Level {{level}} {{title}}</text>
+        </view>
+        <view class="hero-avatar-wrap">
+          <view class="hero-avatar">
+            <text class="hero-initial">{{name[0]}}</text>
+          </view>
+          <view class="hero-level-badge">{{level}}</view>
+        </view>
+      </view>
+      <view class="hero-deco"></view>
+    </view>
+
+    <!-- Stats Bento Grid -->
+    <view class="stats-section">
+      <text class="section-title">Weekly Stats</text>
+      <view class="bento-grid">
+        <!-- Streak Card (Full Width) -->
+        <view class="bento-card streak-card">
+          <view class="streak-deco">
+            <text class="streak-deco-icon">🔥</text>
+          </view>
+          <view class="streak-header">
+            <text class="streak-icon-inline">🔥</text>
+            <text class="streak-label">Current Streak</text>
+          </view>
+          <view class="streak-value-row">
+            <text class="streak-num">{{streak}}</text>
+            <text class="streak-unit">days</text>
+          </view>
+          <view class="week-row">
+            <view wx:for="{{weekDays}}" wx:key="index" class="week-dot {{weekActive[index] ? 'active' : ''}} {{index === weekCurrent ? 'current' : ''}}">
+              <text class="week-dot-text">{{item}}</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- XP Card -->
+        <view class="bento-card">
+          <view class="bento-header">
+            <text class="bento-icon">⚡</text>
+            <text class="bento-label text-secondary">Total XP</text>
+          </view>
+          <text class="bento-value">{{totalXP}}</text>
+        </view>
+
+        <!-- League Card -->
+        <view class="bento-card">
+          <view class="bento-header">
+            <text class="bento-icon">🏆</text>
+            <text class="bento-label text-primary">League</text>
+          </view>
+          <text class="bento-value">{{league}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Achievements -->
+    <view class="achievements-section">
+      <view class="achievements-header">
+        <text class="section-title">Achievements</text>
+        <text class="view-all" bindtap="onViewAllAchievements">View All</text>
+      </view>
+      <view class="achievements-scroll">
+        <scroll-view scroll-x enhanced show-scrollbar="{{false}}">
+          <view class="achievements-row">
+            <view wx:for="{{achievements}}" wx:key="name" class="achievement-item {{item.unlocked ? '' : 'locked'}}">
+              <view class="achievement-badge {{item.bg}}">
+                <text class="achievement-icon">{{item.icon}}</text>
+              </view>
+              <text class="achievement-name">{{item.name}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <!-- CTA -->
+    <view class="profile-cta">
+      <view class="btn-3d-primary profile-btn" bindtap="onContinueLearning">
+        <text>▶</text>
+        <text>Continue Learning</text>
+      </view>
+    </view>
+  </view>
+</view>

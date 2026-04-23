@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Profile - Word Dictation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae8e7",
+                        "on-primary-container": "#1e5000",
+                        "inverse-primary": "#6be026",
+                        "surface-tint": "#2b6c00",
+                        "primary-fixed": "#87fe45",
+                        "surface-container": "#efeded",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-surface-variant": "#3f4a36",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f5f3f3",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed-variant": "#1f5100",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#58cc02",
+                        "secondary-fixed-dim": "#88ceff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "secondary-container": "#2fb8ff",
+                        "surface-dim": "#dbd9d9",
+                        "on-tertiary-container": "#574300",
+                        "tertiary-fixed": "#ffdf92",
+                        "surface-container-highest": "#e4e2e2",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary-fixed": "#001e2e",
+                        "on-primary-fixed": "#082100",
+                        "primary": "#2b6c00",
+                        "tertiary": "#755b00",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#f4bf00",
+                        "inverse-on-surface": "#f2f0f0",
+                        "inverse-surface": "#303030",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf9f8",
+                        "primary-fixed-dim": "#6be026",
+                        "on-secondary-container": "#004666",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed": "#c8e6ff",
+                        "on-tertiary-fixed": "#241a00",
+                        "error": "#ba1a1a",
+                        "outline": "#6f7b64",
+                        "secondary": "#006590",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#ddad00",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "outline-variant": "#becbb1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col relative pb-32">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 z-50 bg-surface/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.06)] bg-surface-container-low">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-zinc-500" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-xl text-zinc-900 dark:text-zinc-100">Edit Profile</h1>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[#58cc02]" style="font-variation-settings: 'FILL' 0;">check</span>
+</button>
+</div>
+</header>
+<main class="flex-grow px-6 pt-8 space-y-8">
+<!-- Profile Photo Edit -->
+<section class="flex flex-col items-center justify-center space-y-4">
+<div class="relative inline-block">
+<div class="w-32 h-32 rounded-full overflow-hidden bg-surface-container-highest shadow-[0_8px_32px_rgba(0,0,0,0.06)] ring-4 ring-surface-container-lowest">
+<img alt="Profile avatar of a young woman with warm lighting and a soft blurred background" class="w-full h-full object-cover" data-alt="close-up portrait of a young woman smiling gently, warm natural lighting, soft focus background, high quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSK69D94iypvnnwPoUKpDFW8qH_HuD1bEBRFLTbPpmZxVK45KEeoZ71S5z33YqiO2rRDaM0w-tM-fHHigJ73_CsGKHMXL2YWgDnjwAyDhxVuH9rODxVowLtuZb8F4lq7qbmB9dnHv9L8GNHABJjcUf7nZRdkg_q1h-qOULLxIfN-MonxFNRKBt_01K_aRVseUmwIJQi3ItfCXj1YUWJLynXDW4fp8yKI85XdLxXsq3wCHq2tJeyVX_L0bR9ESsEUcZZlSIsjDwR9fU"/>
+</div>
+<button class="absolute bottom-0 right-0 w-10 h-10 bg-primary-container text-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform duration-200 shadow-[0_4px_0_0_#2b6c00] active:translate-y-[2px] active:shadow-none border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+</div>
+<p class="text-secondary font-bold text-sm tracking-wide uppercase cursor-pointer hover:underline">Change Avatar</p>
+</section>
+<!-- Form Fields -->
+<section class="space-y-6">
+<!-- Name Input -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant ml-2 uppercase tracking-wide" for="name">Name</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest rounded-xl px-4 py-4 text-on-surface font-semibold focus:outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-shadow" id="name" type="text" value="Alex Johnson"/>
+</div>
+</div>
+<!-- Username Input -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant ml-2 uppercase tracking-wide" for="username">Username</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest rounded-xl px-4 py-4 text-on-surface font-semibold focus:outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-shadow" id="username" type="text" value="@alexj_words"/>
+</div>
+</div>
+</section>
+<!-- Account Settings Links -->
+<section class="bg-surface-container-low rounded-[2rem] p-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] mt-8 space-y-2">
+<h2 class="text-sm font-bold text-on-surface-variant mb-4 ml-2 uppercase tracking-wide">Account Security</h2>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-highest transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Email Address</p>
+<p class="text-sm text-on-surface-variant font-medium">alex.j@example.com</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-highest transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Password</p>
+<p class="text-sm text-on-surface-variant font-medium">••••••••</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</a>
+</section>
+</main>
+<!-- Bottom Save Button (Floating) -->
+<div class="fixed bottom-0 left-0 w-full p-6 bg-gradient-to-t from-surface via-surface/90 to-transparent z-40">
+<button class="w-full bg-primary-container text-white font-bold text-lg py-4 rounded-xl shadow-[0_4px_0_0_#2b6c00] active:translate-y-[4px] active:shadow-none transition-all duration-150 flex justify-center items-center">
+            Save Changes
+        </button>
+</div>
+</body></html>

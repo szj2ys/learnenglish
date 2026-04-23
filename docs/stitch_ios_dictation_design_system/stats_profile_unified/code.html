@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile &amp; Stats - Kinetic Dictate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#001e2e",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#004666",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#574300",
+                        "on-primary-fixed-variant": "#1f5100",
+                        "on-surface": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "secondary-fixed": "#c8e6ff",
+                        "surface-variant": "#e4e2e2",
+                        "secondary": "#006590",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed": "#082100",
+                        "tertiary-container": "#ddad00",
+                        "inverse-primary": "#6be026",
+                        "surface-tint": "#2b6c00",
+                        "surface-container": "#efeded",
+                        "on-surface-variant": "#3f4a36",
+                        "background": "#fbf9f8",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#755b00",
+                        "primary-container": "#58cc02",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "secondary-fixed-dim": "#88ceff",
+                        "tertiary-fixed-dim": "#f4bf00",
+                        "surface-bright": "#fbf9f8",
+                        "on-primary-container": "#1e5000",
+                        "surface-dim": "#dbd9d9",
+                        "primary-fixed": "#87fe45",
+                        "secondary-container": "#2fb8ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "tertiary-fixed": "#ffdf92",
+                        "surface-container-low": "#f5f3f3",
+                        "outline-variant": "#becbb1",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "outline": "#6f7b64",
+                        "primary-fixed-dim": "#6be026",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "inverse-surface": "#303030",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-high": "#eae8e7",
+                        "primary": "#2b6c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom Utilities for Kinetic Studio Feel */
+        .tactile-btn {
+            border-bottom: 4px solid var(--tw-colors-primary);
+            transition: all 0.15s ease;
+        }
+        .tactile-btn:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+            margin-bottom: 2px;
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 8px 32px rgba(27, 28, 28, 0.06);
+        }
+        
+        .glass-gradient-hero {
+            background: linear-gradient(105deg, var(--tw-colors-primary-container) 0%, var(--tw-colors-primary) 100%);
+        }
+        
+        /* Hide scrollbar but keep functionality for clean UI */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fbf9f8]/90 dark:bg-stone-950/90 backdrop-blur-xl transition-all">
+<button class="text-[#58cc02] hover:bg-stone-200/50 dark:hover:bg-stone-800/50 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-black text-2xl text-[#58cc02] tracking-tighter">Kinetic Dictate</h1>
+<button class="text-[#58cc02] hover:bg-stone-200/50 dark:hover:bg-stone-800/50 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl filled" data-icon="local_fire_department">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-4 max-w-lg mx-auto space-y-8">
+<!-- Hero Profile Area (Asymmetric & Layered) -->
+<section class="relative mt-8">
+<div class="bg-surface-container-low rounded-lg p-6 relative z-10 ambient-shadow">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline font-extrabold text-4xl tracking-tight text-on-surface mt-2 mb-1">Alex<br/>Rivera</h2>
+<p class="font-body text-secondary font-semibold text-sm uppercase tracking-widest">Level 24 Scholar</p>
+</div>
+<div class="relative">
+<img alt="Profile avatar" class="w-24 h-24 rounded-full object-cover border-4 border-surface-container-lowest ambient-shadow" data-alt="Close up portrait of a young professional with a friendly smile, clean background, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKLuQko9SaziDLnvypUpzMdGAecIxh366fVHheLuLFwYYyuiYruY_hRuXyAW7pWVEo54B1mD-8MSXRjwTlipMVEdhVfoSVSVfbD1JwOcee4zgUedoqc_AX8hG--sevruzAvm_NdlcuYZHZYl86x5ROqrglLUozEXvlhQY0TpbfXOtlxnh4GUI5HK1NPauD5bCrcpoesx_MxVCl0eFuTMM9PJ7AE1qNXMUFcj1EbG3A7WAgWlyzclsRXCDUxm_Yk5bxYJINz8mst53U"/>
+<div class="absolute -bottom-2 -right-2 bg-tertiary-container text-on-tertiary-container w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 border-surface-container-lowest">
+                            24
+                        </div>
+</div>
+</div>
+</div>
+<!-- Decorative background element for asymmetry -->
+<div class="absolute top-4 -right-2 w-3/4 h-full bg-surface-container-high rounded-lg -z-0"></div>
+</section>
+<!-- Stats Bento Grid -->
+<section>
+<h3 class="font-headline font-bold text-xl mb-4 ml-2">Weekly Stats</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Streak Card (Highlight) -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-5 ambient-shadow col-span-2 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-9xl filled text-tertiary">local_fire_department</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined filled text-tertiary">local_fire_department</span>
+<span class="font-body font-bold text-tertiary uppercase tracking-wider text-xs">Current Streak</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-black text-5xl tracking-tighter">14</span>
+<span class="font-body font-medium text-on-surface-variant text-sm">days</span>
+</div>
+<!-- Mini visual week progress -->
+<div class="flex justify-between mt-4">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">M</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">T</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">W</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs ring-2 ring-tertiary ring-offset-2 ring-offset-surface-container-lowest">T</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-medium text-xs">F</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-medium text-xs">S</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-medium text-xs">S</div>
+</div>
+</div>
+</div>
+<!-- XP Card -->
+<div class="bg-surface-container-low rounded-DEFAULT p-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+<span class="font-body font-bold text-secondary uppercase tracking-wider text-xs">Total XP</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-bold text-3xl tracking-tight">4,250</span>
+</div>
+</div>
+<!-- Rank Card -->
+<div class="bg-surface-container-low rounded-DEFAULT p-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">emoji_events</span>
+<span class="font-body font-bold text-primary uppercase tracking-wider text-xs">League</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-bold text-2xl tracking-tight">Emerald</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Badges / Achievements -->
+<section>
+<div class="flex justify-between items-end mb-4 ml-2">
+<h3 class="font-headline font-bold text-xl">Achievements</h3>
+<button class="text-secondary font-bold text-sm hover:underline">View All</button>
+</div>
+<div class="bg-surface-container-low rounded-DEFAULT p-4">
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<!-- Badge 1 -->
+<div class="flex-shrink-0 flex flex-col items-center w-20">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center ambient-shadow mb-2 border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined filled text-on-primary-container text-3xl">school</span>
+</div>
+<span class="font-body font-semibold text-xs text-center leading-tight text-on-surface">Grammar Master</span>
+</div>
+<!-- Badge 2 -->
+<div class="flex-shrink-0 flex flex-col items-center w-20">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center ambient-shadow mb-2 border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined filled text-on-secondary-container text-3xl">timer</span>
+</div>
+<span class="font-body font-semibold text-xs text-center leading-tight text-on-surface">Speed Demon</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex-shrink-0 flex flex-col items-center w-20">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center ambient-shadow mb-2 border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined filled text-on-tertiary-container text-3xl">verified</span>
+</div>
+<span class="font-body font-semibold text-xs text-center leading-tight text-on-surface">Perfect Week</span>
+</div>
+<!-- Badge 4 (Locked) -->
+<div class="flex-shrink-0 flex flex-col items-center w-20 opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">lock</span>
+</div>
+<span class="font-body font-semibold text-xs text-center leading-tight text-on-surface">Vocab King</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Action -->
+<section class="pb-6">
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-xl tactile-btn text-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined filled">play_arrow</span>
+                Continue Learning
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-white/80 dark:bg-stone-900/80 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-[32px] tonal-transition">
+<button class="flex flex-col items-center justify-center text-stone-400 px-5 py-2 hover:text-stone-600 dark:hover:text-stone-200">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Learn</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 px-5 py-2 hover:text-stone-600 dark:hover:text-stone-200">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Ranks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 px-5 py-2 hover:text-stone-600 dark:hover:text-stone-200">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="assignment">assignment</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Quests</span>
+</button>
+<!-- Active State: Profile -->
+<button class="flex flex-col items-center justify-center bg-[#58cc02] text-white rounded-2xl px-5 py-2 shadow-[0_4px_0_0_#2b6c00] -translate-y-1 active:translate-y-0 active:shadow-none transition-all duration-150">
+<span class="material-symbols-outlined text-2xl mb-1 filled" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leaderboard - The Kinetic Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#574300",
+                    "surface-tint": "#2b6c00",
+                    "surface-container-high": "#eae8e7",
+                    "surface-dim": "#dbd9d9",
+                    "on-surface": "#1b1c1c",
+                    "inverse-on-surface": "#f2f0f0",
+                    "tertiary-fixed": "#ffdf92",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f8",
+                    "primary": "#2b6c00",
+                    "on-surface-variant": "#3f4a36",
+                    "on-secondary-fixed": "#001e2e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#efeded",
+                    "outline-variant": "#becbb1",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "surface": "#fbf9f8",
+                    "outline": "#6f7b64",
+                    "surface-container-low": "#f5f3f3",
+                    "on-primary-fixed-variant": "#1f5100",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#6be026",
+                    "secondary-fixed-dim": "#88ceff",
+                    "primary-fixed": "#87fe45",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#082100",
+                    "tertiary-fixed-dim": "#f4bf00",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e2",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#2fb8ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#1e5000",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#004666",
+                    "secondary-fixed": "#c8e6ff",
+                    "surface-container-highest": "#e4e2e2",
+                    "primary-container": "#58cc02",
+                    "secondary": "#006590",
+                    "primary-fixed-dim": "#6be026",
+                    "tertiary-container": "#ddad00",
+                    "tertiary": "#755b00",
+                    "background": "#fbf9f8",
+                    "on-secondary-fixed-variant": "#004c6e",
+                    "on-background": "#1b1c1c",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "label": [
+                            "Plus Jakarta Sans"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased pb-24 md:pb-0 pt-16 h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar (Web & Mobile) -->
+<header class="bg-surface/80 dark:bg-zinc-950/80 backdrop-blur-xl docked full-width top-0 bg-surface-container-low dark:bg-zinc-900 shadow-[0_8px_32px_rgba(0,0,0,0.06)] fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-2xl cursor-pointer hover:scale-105 transition-transform active:translate-y-0.5 transition-all">menu</span>
+</div>
+<h1 class="font-plus-jakarta-sans font-black tracking-tight text-2xl text-green-600 dark:text-green-400">Leaderboards</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border-2 border-surface cursor-pointer hover:scale-105 transition-transform active:translate-y-0.5 transition-all">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a young woman with natural makeup looking directly at camera, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt02yg2EBjk8BVStr4TuisRL9f_r-I1vAutUACeoiN9fjSDFWp8-4CuiFlvmQhUdpwAnzFDTbSWWaANfBAHe6kCRT6hOjUEWsOEMZFiVx9eOUSTeu-ClyRVm8EAXMEyRn4W15Emp0-CuqZ4sgyO6bWL5XnYOorMkgG4nxBV4QG2ALRJMzRzieY7KFS4-A1sCxKkQlERhIJzrvPKLTSVheOLLyHpWE7RsLhyyVIcRUEtFxveGE7I-4ZQanJP_x5rc1AF-MIhQCLKqP-"/>
+</div>
+</header>
+<!-- Main Content Area - Scrollable -->
+<main class="flex-1 overflow-y-auto w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8 py-6 pb-32">
+<!-- Top 3 Podium Section -->
+<section class="mt-4 mb-10">
+<div class="flex items-end justify-center gap-2 sm:gap-6 h-64">
+<!-- #2 Silver -->
+<div class="flex flex-col items-center justify-end h-full w-1/3 max-w-[120px] relative">
+<div class="absolute -top-12 flex flex-col items-center">
+<div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-surface-container-lowest shadow-[0_8px_32px_rgba(0,0,0,0.06)] z-10 overflow-hidden bg-surface-container-high">
+<img alt="Avatar 2" class="w-full h-full object-cover" data-alt="portrait of young man with short dark hair in casual shirt outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ3N9ssx_J420rLDEzFJsHvf_UK9wGbeNXLlDzDE8BP5NeIXk7fyNJGmSmcxKpjdgGDSbJF9CmHUvXqOq4BdlgLGByL75tUfCxOxGqBeeeLwXW6j0DCDspYI6Y08ft8FK5_AZN3Glba5xYeFyl36otyYiO9oWarN8lNSyHqNqb035wCRxr7RidT7lgULcrqOG0EiCdY4ssC5h3FHXfM6rAhFs9yCalWNHLUowYIsn_pTyZ_eUrIjFirI8u__XVCYLGYRtFYmOEP4g1"/>
+</div>
+<span class="bg-surface-container-lowest text-on-surface font-black text-sm px-3 py-1 rounded-full -mt-4 z-20 shadow-sm">Alex M.</span>
+<span class="text-secondary font-bold text-xs mt-1">4,250 XP</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-DEFAULT flex flex-col items-center justify-start pt-6 h-[65%] relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container to-surface-container-low opacity-50"></div>
+<span class="text-3xl font-black text-surface-dim relative z-10">2</span>
+</div>
+</div>
+<!-- #1 Gold (Taller, Center) -->
+<div class="flex flex-col items-center justify-end h-full w-1/3 max-w-[140px] relative z-10">
+<div class="absolute -top-16 flex flex-col items-center">
+<div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-surface-container-lowest shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-10 overflow-hidden bg-primary-container">
+<img alt="Avatar 1" class="w-full h-full object-cover" data-alt="smiling young woman with long hair looking at camera, soft outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWE4clpD-Z1OMBBvYYHu9hPC_4iENglCH1xyQmXZu_k6RgCEgktmyMiMdHiyhQWP9YznXOvj59sIEyBY8HopcCAskdKnALDqw83ImnPr4yQXXrh55cKp1qS0otRpsDxnEJspJ5OZVe9poRUUJeN1-gaf891fAyHKPGWX6DphhoX2V0WA4IZTTvVX5DVrxb3oqgTyblncNzY1c_ETq8j-cvnz8XStp4tdv7akOEEyuJ-JA2zF-9Xci17jKOwpPaV3eS9YnyyEqfehxT"/>
+</div>
+<div class="absolute -top-3 right-0 bg-tertiary-container text-on-tertiary-container rounded-full w-8 h-8 flex items-center justify-center z-20 shadow-sm border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-lg" data-weight="fill">military_tech</span>
+</div>
+<span class="bg-primary-container text-on-primary-container font-black text-base px-4 py-1 rounded-full -mt-4 z-20 shadow-md">Sarah K.</span>
+<span class="text-primary font-bold text-sm mt-1">5,120 XP</span>
+</div>
+<div class="w-full bg-gradient-to-b from-primary-container to-primary rounded-t-lg flex flex-col items-center justify-start pt-6 h-[85%] relative overflow-hidden shadow-[0_4px_0_0_#2b6c00]">
+<span class="text-4xl font-black text-on-primary-container relative z-10 drop-shadow-sm">1</span>
+</div>
+</div>
+<!-- #3 Bronze -->
+<div class="flex flex-col items-center justify-end h-full w-1/3 max-w-[120px] relative">
+<div class="absolute -top-10 flex flex-col items-center">
+<div class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full border-4 border-surface-container-lowest shadow-[0_8px_32px_rgba(0,0,0,0.06)] z-10 overflow-hidden bg-surface-container-high">
+<img alt="Avatar 3" class="w-full h-full object-cover" data-alt="portrait of a man with stubble smiling gently, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ4UQVXIOwOuJaywd7qfpN2Zu_yhshWaEGvc_JAfvPu2JvvkWvYSwroQsLX0pd_vRu1WCERKc_gwL_fB6uwwT8Vf3TJQ8SprQdSVW-aJ7VGZask6ktnPFEmQ4Hy7Ay5XHZZmKxko9-iKyOOyN_JvGxP9MwZlmWbt6kd1xiRmlDflUH91TDyCIkZ8VeWk0ltx7mw8U_SmM5DJ-DjiuTgmHFlm6_Ta_8ZQIO9OUv-3eXcaKStNReiP2BA8TCD0azpzjli2k3_q5T2XlF"/>
+</div>
+<span class="bg-surface-container-lowest text-on-surface font-black text-sm px-3 py-1 rounded-full -mt-3 z-20 shadow-sm">David L.</span>
+<span class="text-tertiary font-bold text-xs mt-1">3,980 XP</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-DEFAULT flex flex-col items-center justify-start pt-6 h-[50%] relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-highest to-surface-container-low opacity-50"></div>
+<span class="text-3xl font-black text-surface-dim relative z-10">3</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Promotion Zone Indicator -->
+<div class="flex items-center justify-between mb-4 px-2">
+<h2 class="text-lg font-black text-on-surface tracking-tight">Promotion Zone</h2>
+<div class="flex items-center gap-1 text-xs font-bold text-secondary uppercase tracking-wider bg-secondary-fixed bg-opacity-20 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+<span>Top 10 Advance</span>
+</div>
+</div>
+<!-- Ranks 4-10 List -->
+<div class="flex flex-col gap-3">
+<!-- Rank 4 -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-l-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-8 font-black text-surface-dim text-lg text-center">4</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3">
+<img alt="Avatar 4" class="w-full h-full object-cover" data-alt="portrait of mature woman with short grey hair smiling outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwX1BsYf1JIl_nUONzWh8vJr5hEtZn14lsO46UTJt-xyjXBhDZ-EbMZF5G7SItICgeXQMXOlJ3eZ5UGtkbKvHGkK7UJfXTc9ds_-7qzXKZ4cTbzoEx9fpAjamLoY6UcAuc9sYd_w-7NQyIlEfaWQR-gi2c40WPZEJ1OZZrZgOLP6Bc4blZxntsk0LCouwdekwDZCZCpai0KVWhomKcGF3PWXeErPt2DYKGlEV5tAkzuk74Y9iAnh465DLbHeYCJT2O0IoK7iG4E9e8"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface text-base">Emma W.</h3>
+</div>
+<div class="font-black text-secondary text-right">3,850 XP</div>
+</div>
+<!-- Rank 5 -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-l-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-8 font-black text-surface-dim text-lg text-center">5</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3">
+<img alt="Avatar 5" class="w-full h-full object-cover" data-alt="young man with dark hair looking confident, simple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgCN4ufr0VXMFBslZDBG8lhsWyX5RAlmHa4g3Gah_G2eOQg7zbK8eF-KIfV4qjKnfkZMD07OojHD6bjwjindtCpgT4uy6ddyNYU1CDZwmecktSqXx5BVpwclgJCHn-YgAwvGhNLDDbZ3YpM1idcd7f0I3ZeEhXGq5wOyKVtlmFBsbNQLW0cwqJgmEV9GpFFlBavX8Z3BGj6C-V5t4I2ET3AQazpGL3_TLHNHRWVRFFtOmwfX7FCbSUaE4ccrv639JAz8RI4L7hLsGO"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface text-base">James T.</h3>
+</div>
+<div class="font-black text-secondary text-right">3,620 XP</div>
+</div>
+<!-- Rank 6 -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group">
+<div class="w-8 font-black text-surface-dim text-lg text-center">6</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3">
+<img alt="Avatar 6" class="w-full h-full object-cover" data-alt="young woman with glasses looking thoughtful" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdAzqGHO5Y7in7PyAMwNPuyNtSSx_60YzNjjObSr1KA_mmn2d80cWmrH_FvEt7nmACUkSMAwGDOPwETv4aaC7J9oQ5rFWOsMfaPzA7ke442h_wqJJK59b1NZIZKwFI69LiDFt14HP19KESYpYi5jPZ9G1QIbMZpRjRkumnAyoFaEvGa8-Qn9kG87e9c3PYbY-bFDLnqoRNmXzYUeaFZv8fkWuqHrN3kY13k3_hlwf_cbyiNG9e63AhUUWsGor__-Hc_PrFq7lgXHIB"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface text-base">Olivia R.</h3>
+</div>
+<div class="font-bold text-on-surface-variant text-right">3,410 XP</div>
+</div>
+<!-- Rank 7 -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group">
+<div class="w-8 font-black text-surface-dim text-lg text-center">7</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3">
+<img alt="Avatar 7" class="w-full h-full object-cover" data-alt="man looking sideways warmly, casual setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjs_6IJjymFBxBWvs5IetmoiFiSlzjHIq1Udc47Bb6ueIVOPLUcnpBUiyfUqtGX3kQyV7m1z2rnzbtLhw0TLQNVjVEx5lB-a3kthE7bha4wW2yQVFO0rwiCqIOHJrjv8DTMBD-g_1BtmmwJiG4jUBIOwT2zx6BraI1HTn6hw_cYqkdF4wDlQFR7QromGo8fAhxST5HChaW4U_RHZ-rN55Mbmams53z-4OvCLXQAp_X8zygP4hrCOA_drCBQZRcKggPmqB-_Sg4_9YS"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface text-base">Liam S.</h3>
+</div>
+<div class="font-bold text-on-surface-variant text-right">3,200 XP</div>
+</div>
+<!-- Rank 8 -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group">
+<div class="w-8 font-black text-surface-dim text-lg text-center">8</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3 flex items-center justify-center bg-secondary-fixed">
+<span class="font-bold text-secondary">C</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface text-base">Chloe B.</h3>
+</div>
+<div class="font-bold text-on-surface-variant text-right">3,050 XP</div>
+</div>
+<!-- Rank 9 -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group">
+<div class="w-8 font-black text-surface-dim text-lg text-center">9</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3">
+<img alt="Avatar 9" class="w-full h-full object-cover" data-alt="smiling man in white shirt, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkdc19-MTW5VjAFOtXsyEKDPRf8VAcBRvB-LaLYNpfeocQHUiCSrWwv6KCcF0K0yX4pyYpcl3C2tGvqoq7EA7xljBhGAQ_q2weObWq7_gaUrshaEjVBqJg87GgmVPqDMK4GKknCZbKudvw6ccpFWGv8zD_SFiNCznYBTjRJ3JobeKksDzEtp-BIRBe5MamuVRsDptYg2F9_C8qFfGC4JCqy3cGD3Own4xs-xRjuQLtIdS62a_gA4E7VZ7d4Lz6RSirqbyfFkrC39D2"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface text-base">Noah M.</h3>
+</div>
+<div class="font-bold text-on-surface-variant text-right">2,990 XP</div>
+</div>
+<!-- Rank 10 (Demotion Warning) -->
+<div class="flex items-center bg-surface-container-lowest rounded-DEFAULT p-3 shadow-[0_4px_16px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 relative overflow-hidden group border border-error-container/50">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error rounded-l-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-8 font-black text-surface-dim text-lg text-center">10</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3">
+<img alt="Avatar 10" class="w-full h-full object-cover" data-alt="close up of woman looking serious, soft light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ZWR-3WdjOZ04iKks1W5x2N0VIFn47eurkoAl4Bkppx8cFs69U2KN6tR153my6x3RQ8Eiv3OcyyI9hoIb4_YcJyy86jzGn9mtqKm5gKTTqGvIOxmsltOeoVS1EoLFOdXhZwCuXCnkoEoDo6j7PR5OQPrRrv0xMxyJPGpLdh34gfWj6lVpD3YaNlV2-NqPg4iYby1laNFuCKSf1FfjBvPN22WaivReMsUQScbakBX77S4OF5R322rxWilDxVJnEsUnXxxKLAoElDvh"/>
+</div>
+<div class="flex-1 flex items-center gap-2">
+<h3 class="font-bold text-on-surface text-base">Mia T.</h3>
+<span class="material-symbols-outlined text-error text-sm" title="Danger Zone">warning</span>
+</div>
+<div class="font-bold text-error text-right">2,850 XP</div>
+</div>
+<!-- Demotion Zone Indicator -->
+<div class="flex items-center justify-center my-2">
+<div class="h-px bg-surface-dim w-full max-w-[100px]"></div>
+<span class="px-3 text-xs font-bold text-surface-dim uppercase tracking-wider">Demotion Zone</span>
+<div class="h-px bg-surface-dim w-full max-w-[100px]"></div>
+</div>
+<!-- Rank 11 -->
+<div class="flex items-center bg-surface-container-low rounded-DEFAULT p-3 opacity-70">
+<div class="w-8 font-black text-surface-dim text-lg text-center">11</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high mx-3 flex items-center justify-center bg-tertiary-fixed">
+<span class="font-bold text-tertiary">E</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-on-surface-variant text-base">Ethan G.</h3>
+</div>
+<div class="font-bold text-on-surface-variant text-right">2,700 XP</div>
+</div>
+</div>
+</main>
+<!-- Sticky Current User Rank (Floating Above Nav) -->
+<div class="fixed bottom-24 md:bottom-6 left-0 w-full px-4 md:px-6 z-40 flex justify-center pointer-events-none">
+<div class="w-full max-w-3xl bg-surface-container-lowest border-2 border-surface-container-high rounded-xl p-3 sm:p-4 flex items-center shadow-[0_16px_32px_rgba(0,0,0,0.08)] pointer-events-auto transform transition-all hover:-translate-y-1">
+<div class="w-10 sm:w-12 font-black text-primary text-xl sm:text-2xl text-center">24</div>
+<div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-surface-container-high mx-3 sm:mx-4 border-2 border-primary-container relative">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a young woman with natural makeup looking directly at camera, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg3AEnoYslMBAMHiR0qUB9tcyx68vUjDxyi_9Di2qbJpQKyVSZ7oKVOS7D60D-HCSswbGi4EclkfJlOAo80Fj__mmt5eYM2DKYL3BHsNIsQ41nM6T56XlN0xpi535Dek9kymnxPcabypOkTp2YrMSoUrrKJEfqALIMFQyvm8Imwxq8A5YeRv04vsV0af3cDAh47ve2U5nPILrhsW3w7k_jOsMJNgFJogxwRENxezh2qkDvPntxlrjW3qyGR-RvJ9BUJg9cWQYIVkyV"/>
+</div>
+<div class="flex-1">
+<h3 class="font-black text-on-surface text-lg sm:text-xl tracking-tight">You</h3>
+<p class="text-xs sm:text-sm font-bold text-secondary">340 XP to promotion</p>
+</div>
+<div class="flex flex-col items-end">
+<div class="font-black text-primary text-lg sm:text-xl">1,240 XP</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Mobile Only) / SideNav (Desktop - Simulated via hidden class) -->
+<nav class="md:hidden bg-white/90 dark:bg-zinc-900/90 backdrop-blur-2xl text-green-500 dark:text-green-400 font-plus-jakarta-sans text-[11px] font-bold uppercase tracking-wider docked full-width bottom-0 rounded-t-[32px] tonal-layering-no-borders shadow-[0_-8px_32px_rgba(0,0,0,0.05)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3">
+<!-- Learn (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl active:translate-y-0 active:shadow-none transition-all duration-100 group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">school</span>
+<span>Learn</span>
+</a>
+<!-- Leaderboard (Active) -->
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-2xl px-4 py-2 shadow-[0_4px_0_0_#2b6c00] translate-y-[-4px] active:translate-y-0 active:shadow-none transition-all duration-100" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" data-weight="fill">leaderboard</span>
+<span>Leaderboard</span>
+</a>
+<!-- Quests (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl active:translate-y-0 active:shadow-none transition-all duration-100 group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">military_tech</span>
+<span>Quests</span>
+</a>
+<!-- Shop (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl active:translate-y-0 active:shadow-none transition-all duration-100 group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">shopping_cart</span>
+<span>Shop</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl active:translate-y-0 active:shadow-none transition-all duration-100 group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<!-- Desktop Sidebar Stub (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col w-64 h-screen fixed left-0 top-0 border-r border-surface-variant bg-surface-bright pt-20 px-4">
+<nav class="flex flex-col gap-2 font-plus-jakarta-sans text-sm font-bold tracking-wide">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">school</span>
+                Learn
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary-container text-on-primary-container shadow-[0_2px_0_0_#2b6c00] translate-y-[-2px] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">leaderboard</span>
+                Leaderboard
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">military_tech</span>
+                Quests
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+                Shop
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+                Profile
+            </a>
+</nav>
+</aside>
+</body></html>
