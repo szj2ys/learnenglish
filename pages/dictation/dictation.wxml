@@ -1,0 +1,57 @@
+<view class="page-dictation">
+  <!-- Floating XP -->
+  <view class="xp-float">
+    <text class="xp-text">{{wordXP}} XP</text>
+  </view>
+
+  <!-- Top Bar -->
+  <view class="dictation-top-bar">
+    <view class="close-btn" bindtap="onCloseTap">
+      <text class="close-icon">✕</text>
+    </view>
+    <view class="progress-track">
+      <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+    </view>
+    <view class="xp-badge">
+      <text class="xp-icon">⚡</text>
+      <text class="xp-num">{{xp}}</text>
+    </view>
+  </view>
+
+  <!-- Main Canvas -->
+  <view class="dictation-main">
+    <!-- Speaker Area -->
+    <view class="speaker-section">
+      <view class="speaker-wrapper">
+        <view class="ambient-glow"></view>
+        <view class="speaker-btn {{isPlaying ? 'playing' : ''}}" bindtap="onReplayTap">
+          <view class="speaker-inner"></view>
+          <text class="speaker-icon">🔊</text>
+        </view>
+      </view>
+      <text class="tap-hint">Tap to Replay</text>
+    </view>
+
+    <!-- Input Area -->
+    <view class="input-section">
+      <view class="input-field ghost-border">
+        <view class="input-gradient"></view>
+        <view class="input-content">
+          <text class="input-typed">{{inputValue}}</text>
+          <view class="input-cursor"></view>
+          <text class="input-hint">{{remainingHint}}</text>
+        </view>
+      </view>
+
+      <!-- Controls -->
+      <view class="controls-row">
+        <view class="control-btn" bindtap="onReplayTap">
+          <text class="control-icon">↻</text>
+        </view>
+        <view class="control-btn" bindtap="onDeleteTap">
+          <text class="control-icon">⌫</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
