@@ -1,0 +1,92 @@
+<view class="page-container">
+  <!-- TopAppBar -->
+  <view class="top-bar">
+    <view class="top-bar-left">
+      <view class="icon-btn" bindtap="onMenuTap">
+        <text class="icon">☰</text>
+      </view>
+      <text class="app-title">Kinetic Dictate</text>
+    </view>
+    <view class="top-bar-right">
+      <view class="streak-badge">
+        <text class="icon-fire">🔥</text>
+        <text class="streak-num">{{streak}}</text>
+      </view>
+      <view class="avatar">
+        <text class="avatar-text">{{userName[0]}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Main Content -->
+  <view class="main-content">
+    <!-- Welcome Header -->
+    <view class="welcome-section">
+      <text class="welcome-title">Welcome back,\n{{userName}}!</text>
+      <text class="welcome-sub">Ready to smash your daily goals?</text>
+    </view>
+
+    <!-- Daily Quest Card -->
+    <view class="quest-card-wrapper">
+      <view class="quest-card">
+        <view class="quest-header">
+          <view>
+            <text class="quest-title">Daily Quest</text>
+            <text class="quest-sub">Learn new vocabulary</text>
+          </view>
+          <view class="quest-count">
+            <text class="count-current">{{dailyCurrent}}</text>
+            <text class="count-total">/{{dailyTotal}}</text>
+          </view>
+        </view>
+        <!-- Chunky Progress Bar -->
+        <view class="progress-track">
+          <view class="progress-fill" style="width: {{dailyPercent}}%;">
+            <view class="progress-shimmer"></view>
+          </view>
+        </view>
+        <!-- Primary CTA -->
+        <view class="btn-3d-primary quest-btn" bindtap="onContinueTap">
+          <text>Continue Learning</text>
+          <text class="btn-icon">▶</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Quick Start Grid -->
+    <view class="quick-start-section">
+      <text class="section-title">Quick Start</text>
+      <view class="quick-grid">
+        <view class="quick-card" bindtap="onQuickStart" data-count="5">
+          <view class="quick-icon bg-secondary-fixed">
+            <text class="quick-icon-text">🧠</text>
+          </view>
+          <text class="quick-label">5 Words</text>
+        </view>
+        <view class="quick-card" bindtap="onQuickStart" data-count="10">
+          <view class="quick-icon bg-tertiary-fixed">
+            <text class="quick-icon-text">⚡</text>
+          </view>
+          <text class="quick-label">10 Words</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Rank Banner -->
+    <view class="rank-banner" bindtap="onRankTap">
+      <view class="rank-left">
+        <view class="rank-shield">
+          <text class="shield-icon">🛡️</text>
+          <text class="shield-num">III</text>
+        </view>
+        <view class="rank-info">
+          <text class="rank-name">{{rank}}</text>
+          <text class="rank-desc">{{rankDesc}}</text>
+        </view>
+      </view>
+      <text class="rank-arrow">›</text>
+    </view>
+
+    <!-- Bottom spacer for tab-bar -->
+</view>
+</view>
