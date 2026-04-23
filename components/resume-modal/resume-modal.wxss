@@ -1,0 +1,139 @@
+.resume-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 28, 28, 0.3);
+  backdrop-filter: blur(8rpx);
+  -webkit-backdrop-filter: blur(8rpx);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.resume-modal {
+  background: var(--surface-container-lowest);
+  border-radius: 32rpx 32rpx 0 0;
+  padding: 32rpx 48rpx 48rpx;
+  width: 100%;
+  max-width: 750rpx;
+  box-shadow: 0 -32rpx 64rpx rgba(27, 28, 28, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32rpx;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.resume-handle {
+  width: 96rpx;
+  height: 8rpx;
+  background: var(--surface-variant);
+  border-radius: 9999rpx;
+  margin-bottom: 16rpx;
+}
+
+/* Icon */
+.resume-icon-wrap {
+  position: relative;
+  margin-bottom: 8rpx;
+}
+
+.resume-icon-main {
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 50%;
+  background: rgba(88, 204, 2, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16rpx 64rpx rgba(43, 108, 0, 0.1);
+}
+
+.resume-icon-text {
+  font-size: 80rpx;
+}
+
+.resume-icon-accent {
+  position: absolute;
+  bottom: -8rpx;
+  right: -8rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: var(--tertiary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid var(--surface-container-lowest);
+  box-shadow: 0 4rpx 12rpx rgba(27, 28, 28, 0.08);
+}
+
+.resume-accent-text {
+  font-size: 32rpx;
+}
+
+/* Content */
+.resume-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.resume-title {
+  font-size: 44rpx;
+  font-weight: 900;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.resume-sub {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+/* Progress */
+.resume-progress-track {
+  width: 100%;
+  height: 24rpx;
+  background: var(--surface-container-highest);
+  border-radius: 9999rpx;
+  overflow: hidden;
+  box-shadow: inset 0 4rpx 8rpx rgba(27, 28, 28, 0.06);
+}
+
+.resume-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-container), var(--primary));
+  border-radius: 9999rpx;
+  transition: width 0.3s ease;
+}
+
+/* Actions */
+.resume-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  margin-top: 16rpx;
+}
+
+.resume-btn-primary {
+  font-size: 36rpx;
+  padding: 40rpx;
+  gap: 16rpx;
+}
+
+.resume-btn-secondary {
+  font-size: 32rpx;
+  padding: 36rpx;
+  gap: 16rpx;
+}
