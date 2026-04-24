@@ -1,49 +1,42 @@
-# 单词听写小程序前端复刻计划
+# 单词听写小程序 - 后端开发与前后端联调
 
-## 设计系统
-- 主色: #58cc02 (绿) / #2b6c00
-- 辅色: #2fb8ff (蓝) / #006590
-- 强调: #ddad00 (琥珀) / #755b00
-- 背景: #fbf9f8
-- 风格: Kinetic Studio — 3D 触感按钮、大圆角、无分割线、表面层级区分
+## 云函数开发（10个）- 全部完成
+- [x] login - 微信登录，创建/更新用户
+- [x] getUserInfo - 获取用户信息
+- [x] getUserStats - 获取用户统计（streak, xp, level, daily progress等）
+- [x] updateProfile - 更新用户资料
+- [x] getDailyWords - 获取每日单词列表（含内置词库）
+- [x] startSession - 开始听写会话
+- [x] submitAnswer - 提交答案
+- [x] completeSession - 完成会话，更新用户统计和每日进度
+- [x] getResumeSession - 获取可恢复的会话
+- [x] getLeaderboard - 获取排行榜
 
-## 页面清单
-- [x] 全局: app.json / app.js / app.wxss / 自定义 tab-bar
-- [x] 首页 (home): 欢迎、每日任务进度、快速开始(5词/10词)、底部导航
-- [x] 听写页 (dictation): 进度条、发音按钮、输入框、重播/删除控制
-- [x] 结果页 (result): 完成庆祝、正确率、XP、再来一局/复习错题
-- [x] 排行榜 (leaderboard): 领奖台(Top3) + 排行列表 + 自己排名浮动卡片
-- [x] 个人页 (profile): 头像信息、统计Bento、成就徽章、继续学习
-- [x] 编辑资料 (edit-profile): 头像、昵称、用户名、账户安全链接
-- [x] 恢复弹窗组件 (resume-modal): 继续上次/重新开始
-- [x] 任务页 (quests): 每日任务列表、进度条、奖励
+## 数据库集合设计
+- users - 用户信息（openid, nickName, streak, xp, level, achievements等）
+- words - 单词库（内置20个种子单词，可扩展）
+- sessions - 听写会话（wordIds, currentIndex, answers, status等）
+- mistakes - 错题本（word, count, nextReview）
+- dailyProgress - 每日进度（date, completed, correct）
 
-## 验证结果
-- [x] app.json pages 与 tabBar 配置完整
-- [x] 各页面 WXML/WXSS/JS/JSON 四件套齐全
-- [x] 自定义 tab-bar 组件注册 (custom-tab-bar/index.*)
-- [x] resume-modal 组件在四件套齐全
-- [x] 项目目录结构完整
+## 前端联调 - 全部完成
+- [x] app.js - 全局登录（wx.cloud.init + login 云函数）
+- [x] home/home.js - getUserStats + getResumeSession
+- [x] dictation/dictation.js - getDailyWords + startSession + submitAnswer + completeSession
+- [x] result/result.js - 接收 dictation 页参数并展示
+- [x] leaderboard/leaderboard.js - getLeaderboard
+- [x] profile/profile.js - getUserInfo
+- [x] edit-profile/edit-profile.js - updateProfile
 
-## 已交付文件
-```
-app.js / app.json / app.wxss / sitemap.json
-custom-tab-bar/index.js .json .wxml .wxss
-components/resume-modal/resume-modal.js .json .wxml .wxss
-pages/home/home.js .json .wxml .wxss
-pages/dictation/dictation.js .json .wxml .wxss
-pages/result/result.js .json .wxml .wxss
-pages/leaderboard/leaderboard.js .json .wxml .wxss
-pages/profile/profile.js .json .wxml .wxss
-pages/edit-profile/edit-profile.js .json .wxml .wxss
-pages/quests/quests.js .json .wxml .wxss
-```
+## 联调要点
+1. app.js 在 onLaunch 时调用 login 云函数，获取 openid 和用户信息
+2. home 页同时获取用户统计和未完成的会话，支持继续学习
+3. dictation 页支持两种入口：新会话（loadWords）和恢复会话（resumeSession）
+4. dictation 页输入支持自动提交（空格触发）和虚拟键盘
+5. result 页通过 URL 参数接收会话结果
+6. profile 页在 onShow 时刷新，编辑后更新全局数据
 
-## 交互说明
-- 首页 → 听写页 (Continue Learning / Quick Start)
-- 听写页 → 结果页 (完成后自动跳转，当前通过按钮模拟)
-- 结果页 → 听写页 (Play Again) / 首页 (Close)
-- 排行榜 → 底部导航 tab
-- 个人页 → 编辑资料 (点击 Hero 区域)
-- 任务页 → 底部导航 tab
-- 所有 tab 页均有自定义底部导航高亮
+## 注意事项
+- 云函数需要在微信开发者工具中上传部署后才能使用
+- 数据库集合会自动创建（第一次写入时）
+- 单词词库使用内置种子数据，也可通过管理后台批量导入
